@@ -1,0 +1,275 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/home/icoder-5/Documents/node-server/mportal',
+6 verbose install   [ 'assetmanager',
+6 verbose install     'async',
+6 verbose install     'body-parser',
+6 verbose install     'compression',
+6 verbose install     'connect-flash',
+6 verbose install     'connect-mongo',
+6 verbose install     'consolidate',
+6 verbose install     'cookie-parser',
+6 verbose install     'dependable',
+6 verbose install     'errorhandler',
+6 verbose install     'express',
+6 verbose install     'express-session',
+6 verbose install     'express-validator',
+6 verbose install     'forever',
+6 verbose install     'gridfs-stream',
+6 verbose install     'grunt-cli',
+6 verbose install     'grunt-hook',
+6 verbose install     'grunt-concurrent',
+6 verbose install     'grunt-contrib-clean',
+6 verbose install     'grunt-contrib-csslint',
+6 verbose install     'grunt-contrib-cssmin',
+6 verbose install     'grunt-contrib-jshint',
+6 verbose install     'grunt-contrib-uglify',
+6 verbose install     'grunt-contrib-watch',
+6 verbose install     'grunt-env',
+6 verbose install     'grunt-nodemon',
+6 verbose install     'load-grunt-tasks',
+6 verbose install     'lodash',
+6 verbose install     'meanio',
+6 verbose install     'method-override',
+6 verbose install     'mongoose',
+6 verbose install     'morgan',
+6 verbose install     'ms',
+6 verbose install     'nodemailer',
+6 verbose install     'passport',
+6 verbose install     'passport-facebook',
+6 verbose install     'passport-github',
+6 verbose install     'passport-google-oauth',
+6 verbose install     'passport-linkedin',
+6 verbose install     'passport-local',
+6 verbose install     'passport-twitter',
+6 verbose install     'serve-favicon',
+6 verbose install     'swig',
+6 verbose install     'time-grunt',
+6 verbose install     'view-helpers',
+6 verbose install     'expect.js',
+6 verbose install     'grunt-karma',
+6 verbose install     'grunt-mocha-test',
+6 verbose install     'karma',
+6 verbose install     'karma-chrome-launcher',
+6 verbose install     'karma-coffee-preprocessor',
+6 verbose install     'karma-coverage',
+6 verbose install     'karma-firefox-launcher',
+6 verbose install     'karma-html2js-preprocessor',
+6 verbose install     'karma-jasmine',
+6 verbose install     'karma-ng-html2js-preprocessor',
+6 verbose install     'karma-ng-scenario',
+6 verbose install     'karma-phantomjs-launcher',
+6 verbose install     'karma-requirejs',
+6 verbose install     'karma-script-launcher',
+6 verbose install     'mocha',
+6 verbose install     'requirejs',
+6 verbose install     'supertest',
+6 verbose install     'del',
+6 verbose install     'gulp',
+6 verbose install     'gulp-concat',
+6 verbose install     'gulp-csslint',
+6 verbose install     'gulp-cssmin',
+6 verbose install     'gulp-jshint',
+6 verbose install     'gulp-less',
+6 verbose install     'gulp-livereload',
+6 verbose install     'gulp-load-plugins',
+6 verbose install     'gulp-mocha',
+6 verbose install     'gulp-nodemon',
+6 verbose install     'gulp-rimraf',
+6 verbose install     'gulp-uglify',
+6 verbose install     'gulp-util',
+6 verbose install     'jshint-stylish',
+6 verbose install     'through' ] ]
+7 info preinstall mean@0.4.2
+8 verbose readDependencies using package.json deps
+9 verbose already installed skipping assetmanager@1.1.2 /home/icoder-5/Documents/node-server/mportal
+10 verbose already installed skipping async@0.9.0 /home/icoder-5/Documents/node-server/mportal
+11 verbose already installed skipping body-parser@1.10.0 /home/icoder-5/Documents/node-server/mportal
+12 verbose already installed skipping compression@1.2.1 /home/icoder-5/Documents/node-server/mportal
+13 verbose already installed skipping connect-flash@0.1.1 /home/icoder-5/Documents/node-server/mportal
+14 verbose already installed skipping connect-mongo@0.4.2 /home/icoder-5/Documents/node-server/mportal
+15 verbose already installed skipping consolidate@0.10.0 /home/icoder-5/Documents/node-server/mportal
+16 verbose already installed skipping cookie-parser@1.3.3 /home/icoder-5/Documents/node-server/mportal
+17 verbose already installed skipping dependable@0.2.5 /home/icoder-5/Documents/node-server/mportal
+18 verbose already installed skipping errorhandler@1.3.0 /home/icoder-5/Documents/node-server/mportal
+19 verbose already installed skipping express@4.10.6 /home/icoder-5/Documents/node-server/mportal
+20 verbose already installed skipping express-session@1.9.3 /home/icoder-5/Documents/node-server/mportal
+21 verbose already installed skipping express-validator@2.7.0 /home/icoder-5/Documents/node-server/mportal
+22 verbose already installed skipping forever@0.11.1 /home/icoder-5/Documents/node-server/mportal
+23 verbose already installed skipping gridfs-stream@0.5.3 /home/icoder-5/Documents/node-server/mportal
+24 verbose already installed skipping grunt-cli@0.1.13 /home/icoder-5/Documents/node-server/mportal
+25 verbose already installed skipping grunt-hook@~0.3.1 /home/icoder-5/Documents/node-server/mportal
+26 verbose already installed skipping grunt-concurrent@1.0.0 /home/icoder-5/Documents/node-server/mportal
+27 verbose already installed skipping grunt-contrib-clean@0.6.0 /home/icoder-5/Documents/node-server/mportal
+28 verbose already installed skipping grunt-contrib-csslint@0.3.1 /home/icoder-5/Documents/node-server/mportal
+29 verbose already installed skipping grunt-contrib-cssmin@0.10.0 /home/icoder-5/Documents/node-server/mportal
+30 verbose already installed skipping grunt-contrib-jshint@0.10.0 /home/icoder-5/Documents/node-server/mportal
+31 verbose already installed skipping grunt-contrib-uglify@0.5.1 /home/icoder-5/Documents/node-server/mportal
+32 verbose already installed skipping grunt-contrib-watch@0.6.1 /home/icoder-5/Documents/node-server/mportal
+33 verbose already installed skipping grunt-env@0.4.2 /home/icoder-5/Documents/node-server/mportal
+34 verbose already installed skipping grunt-nodemon@0.3.0 /home/icoder-5/Documents/node-server/mportal
+35 verbose already installed skipping load-grunt-tasks@0.6.0 /home/icoder-5/Documents/node-server/mportal
+36 verbose already installed skipping lodash@2.4.1 /home/icoder-5/Documents/node-server/mportal
+37 verbose already installed skipping meanio@^0.6.16 /home/icoder-5/Documents/node-server/mportal
+38 verbose already installed skipping method-override@1.0.2 /home/icoder-5/Documents/node-server/mportal
+39 verbose already installed skipping mongoose@3.8.21 /home/icoder-5/Documents/node-server/mportal
+40 verbose already installed skipping morgan@1.5.0 /home/icoder-5/Documents/node-server/mportal
+41 verbose already installed skipping ms@0.6.2 /home/icoder-5/Documents/node-server/mportal
+42 verbose already installed skipping nodemailer@1.2.2 /home/icoder-5/Documents/node-server/mportal
+43 verbose already installed skipping passport@0.2.1 /home/icoder-5/Documents/node-server/mportal
+44 verbose already installed skipping passport-facebook@1.0.3 /home/icoder-5/Documents/node-server/mportal
+45 verbose already installed skipping passport-github@0.1.5 /home/icoder-5/Documents/node-server/mportal
+46 verbose already installed skipping passport-google-oauth@0.1.5 /home/icoder-5/Documents/node-server/mportal
+47 verbose already installed skipping passport-linkedin@0.1.3 /home/icoder-5/Documents/node-server/mportal
+48 verbose already installed skipping passport-local@1.0.0 /home/icoder-5/Documents/node-server/mportal
+49 verbose already installed skipping passport-twitter@1.0.2 /home/icoder-5/Documents/node-server/mportal
+50 verbose already installed skipping serve-favicon@2.2.0 /home/icoder-5/Documents/node-server/mportal
+51 verbose already installed skipping swig@1.4.2 /home/icoder-5/Documents/node-server/mportal
+52 verbose already installed skipping time-grunt@1.0.0 /home/icoder-5/Documents/node-server/mportal
+53 verbose already installed skipping view-helpers@0.1.5 /home/icoder-5/Documents/node-server/mportal
+54 verbose already installed skipping expect.js@0.3.1 /home/icoder-5/Documents/node-server/mportal
+55 verbose already installed skipping grunt-karma@0.8.3 /home/icoder-5/Documents/node-server/mportal
+56 verbose already installed skipping grunt-mocha-test@0.10.2 /home/icoder-5/Documents/node-server/mportal
+57 verbose already installed skipping karma@0.12.28 /home/icoder-5/Documents/node-server/mportal
+58 verbose already installed skipping karma-chrome-launcher@0.1.7 /home/icoder-5/Documents/node-server/mportal
+59 verbose already installed skipping karma-coffee-preprocessor@0.2.1 /home/icoder-5/Documents/node-server/mportal
+60 verbose already installed skipping karma-coverage@0.2.7 /home/icoder-5/Documents/node-server/mportal
+61 verbose already installed skipping karma-firefox-launcher@0.1.3 /home/icoder-5/Documents/node-server/mportal
+62 verbose already installed skipping karma-html2js-preprocessor@0.1.0 /home/icoder-5/Documents/node-server/mportal
+63 verbose already installed skipping karma-jasmine@0.2.3 /home/icoder-5/Documents/node-server/mportal
+64 verbose already installed skipping karma-ng-html2js-preprocessor@0.1.2 /home/icoder-5/Documents/node-server/mportal
+65 verbose already installed skipping karma-ng-scenario@0.1.0 /home/icoder-5/Documents/node-server/mportal
+66 verbose already installed skipping karma-phantomjs-launcher@0.1.4 /home/icoder-5/Documents/node-server/mportal
+67 verbose already installed skipping karma-requirejs@0.2.2 /home/icoder-5/Documents/node-server/mportal
+68 verbose already installed skipping karma-script-launcher@0.1.0 /home/icoder-5/Documents/node-server/mportal
+69 verbose already installed skipping mocha@2.1.0 /home/icoder-5/Documents/node-server/mportal
+70 verbose already installed skipping requirejs@2.1.15 /home/icoder-5/Documents/node-server/mportal
+71 verbose already installed skipping supertest@0.11.0 /home/icoder-5/Documents/node-server/mportal
+72 verbose already installed skipping del@^0.1.3 /home/icoder-5/Documents/node-server/mportal
+73 verbose already installed skipping gulp@^3.8.8 /home/icoder-5/Documents/node-server/mportal
+74 verbose already installed skipping gulp-concat@^2.4.1 /home/icoder-5/Documents/node-server/mportal
+75 verbose already installed skipping gulp-csslint@^0.1.5 /home/icoder-5/Documents/node-server/mportal
+76 verbose already installed skipping gulp-cssmin@^0.1.6 /home/icoder-5/Documents/node-server/mportal
+77 verbose already installed skipping gulp-jshint@^1.8.5 /home/icoder-5/Documents/node-server/mportal
+78 verbose already installed skipping gulp-less@^1.3.6 /home/icoder-5/Documents/node-server/mportal
+79 verbose already installed skipping gulp-livereload@^2.1.1 /home/icoder-5/Documents/node-server/mportal
+80 verbose already installed skipping gulp-load-plugins@^0.7.0 /home/icoder-5/Documents/node-server/mportal
+81 verbose already installed skipping gulp-mocha@^1.1.0 /home/icoder-5/Documents/node-server/mportal
+82 verbose already installed skipping gulp-nodemon@^1.0.4 /home/icoder-5/Documents/node-server/mportal
+83 verbose already installed skipping gulp-rimraf@^0.1.1 /home/icoder-5/Documents/node-server/mportal
+84 verbose already installed skipping gulp-uglify@^1.0.1 /home/icoder-5/Documents/node-server/mportal
+85 verbose already installed skipping gulp-util@^3.0.1 /home/icoder-5/Documents/node-server/mportal
+86 verbose already installed skipping jshint-stylish@^1.0.0 /home/icoder-5/Documents/node-server/mportal
+87 verbose already installed skipping through@^2.3.6 /home/icoder-5/Documents/node-server/mportal
+88 silly resolved []
+89 info build /home/icoder-5/Documents/node-server/mportal
+90 verbose linkStuff [ false, false, false, '/home/icoder-5/Documents/node-server' ]
+91 info linkStuff mean@0.4.2
+92 verbose linkBins mean@0.4.2
+93 verbose linkMans mean@0.4.2
+94 verbose rebuildBundles mean@0.4.2
+95 verbose rebuildBundles [ '.bin',
+95 verbose rebuildBundles   'assetmanager',
+95 verbose rebuildBundles   'async',
+95 verbose rebuildBundles   'body-parser',
+95 verbose rebuildBundles   'compression',
+95 verbose rebuildBundles   'connect-flash',
+95 verbose rebuildBundles   'connect-mongo',
+95 verbose rebuildBundles   'consolidate',
+95 verbose rebuildBundles   'cookie-parser',
+95 verbose rebuildBundles   'del',
+95 verbose rebuildBundles   'dependable',
+95 verbose rebuildBundles   'errorhandler',
+95 verbose rebuildBundles   'expect.js',
+95 verbose rebuildBundles   'express',
+95 verbose rebuildBundles   'express-session',
+95 verbose rebuildBundles   'express-validator',
+95 verbose rebuildBundles   'forever',
+95 verbose rebuildBundles   'gridfs-stream',
+95 verbose rebuildBundles   'grunt-cli',
+95 verbose rebuildBundles   'grunt-concurrent',
+95 verbose rebuildBundles   'grunt-contrib-clean',
+95 verbose rebuildBundles   'grunt-contrib-csslint',
+95 verbose rebuildBundles   'grunt-contrib-cssmin',
+95 verbose rebuildBundles   'grunt-contrib-jshint',
+95 verbose rebuildBundles   'grunt-contrib-uglify',
+95 verbose rebuildBundles   'grunt-contrib-watch',
+95 verbose rebuildBundles   'grunt-env',
+95 verbose rebuildBundles   'grunt-hook',
+95 verbose rebuildBundles   'grunt-karma',
+95 verbose rebuildBundles   'grunt-mocha-test',
+95 verbose rebuildBundles   'grunt-nodemon',
+95 verbose rebuildBundles   'gulp',
+95 verbose rebuildBundles   'gulp-concat',
+95 verbose rebuildBundles   'gulp-csslint',
+95 verbose rebuildBundles   'gulp-cssmin',
+95 verbose rebuildBundles   'gulp-jshint',
+95 verbose rebuildBundles   'gulp-less',
+95 verbose rebuildBundles   'gulp-livereload',
+95 verbose rebuildBundles   'gulp-load-plugins',
+95 verbose rebuildBundles   'gulp-mocha',
+95 verbose rebuildBundles   'gulp-nodemon',
+95 verbose rebuildBundles   'gulp-rimraf',
+95 verbose rebuildBundles   'gulp-uglify',
+95 verbose rebuildBundles   'gulp-util',
+95 verbose rebuildBundles   'jshint-stylish',
+95 verbose rebuildBundles   'karma',
+95 verbose rebuildBundles   'karma-chrome-launcher',
+95 verbose rebuildBundles   'karma-coffee-preprocessor',
+95 verbose rebuildBundles   'karma-coverage',
+95 verbose rebuildBundles   'karma-firefox-launcher',
+95 verbose rebuildBundles   'karma-html2js-preprocessor',
+95 verbose rebuildBundles   'karma-jasmine',
+95 verbose rebuildBundles   'karma-ng-html2js-preprocessor',
+95 verbose rebuildBundles   'karma-ng-scenario',
+95 verbose rebuildBundles   'karma-phantomjs-launcher',
+95 verbose rebuildBundles   'karma-requirejs',
+95 verbose rebuildBundles   'karma-script-launcher',
+95 verbose rebuildBundles   'load-grunt-tasks',
+95 verbose rebuildBundles   'lodash',
+95 verbose rebuildBundles   'meanio',
+95 verbose rebuildBundles   'method-override',
+95 verbose rebuildBundles   'mocha',
+95 verbose rebuildBundles   'mongoose',
+95 verbose rebuildBundles   'morgan',
+95 verbose rebuildBundles   'ms',
+95 verbose rebuildBundles   'nodemailer',
+95 verbose rebuildBundles   'passport',
+95 verbose rebuildBundles   'passport-facebook',
+95 verbose rebuildBundles   'passport-github',
+95 verbose rebuildBundles   'passport-google-oauth',
+95 verbose rebuildBundles   'passport-linkedin',
+95 verbose rebuildBundles   'passport-local',
+95 verbose rebuildBundles   'passport-twitter',
+95 verbose rebuildBundles   'requirejs',
+95 verbose rebuildBundles   'serve-favicon',
+95 verbose rebuildBundles   'supertest',
+95 verbose rebuildBundles   'swig',
+95 verbose rebuildBundles   'through',
+95 verbose rebuildBundles   'time-grunt',
+95 verbose rebuildBundles   'view-helpers' ]
+96 info install mean@0.4.2
+97 info postinstall mean@0.4.2
+98 verbose unsafe-perm in lifecycle true
+99 info mean@0.4.2 Failed to exec postinstall script
+100 error mean@0.4.2 postinstall: `node node_modules/meanio/node_modules/mean-cli/bin/mean-postinstall`
+100 error Exit status 8
+101 error Failed at the mean@0.4.2 postinstall script.
+101 error This is most likely a problem with the mean package,
+101 error not with npm itself.
+101 error Tell the author that this fails on your system:
+101 error     node node_modules/meanio/node_modules/mean-cli/bin/mean-postinstall
+101 error You can get their info via:
+101 error     npm owner ls mean
+101 error There is likely additional logging output above.
+102 error System Linux 3.13.0-45-generic
+103 error command "/usr/bin/node" "/usr/bin/npm" "install"
+104 error cwd /home/icoder-5/Documents/node-server/mportal
+105 error node -v v0.10.33
+106 error npm -v 1.4.28
+107 error code ELIFECYCLE
+108 verbose exit [ 1, true ]

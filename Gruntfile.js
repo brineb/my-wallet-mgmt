@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: paths.js,
-        tasks: ['jshint'],
+        // tasks: ['jshint'],
         options: {
           livereload: true
         }
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: paths.css,
-        tasks: ['csslint'],
+        // tasks: ['csslint'],
         options: {
           livereload: true
         }
@@ -56,12 +56,12 @@ module.exports = function(grunt) {
         files: '<%= assets.core.js %>'
       }
     },
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
-      },
-      src: paths.css
-    },
+    // csslint: {
+    //   options: {
+    //     csslintrc: '.csslintrc'
+    //   },
+    //   src: paths.css
+    // },
     cssmin: {
       core: {
         files: '<%= assets.core.css %>'
@@ -122,8 +122,8 @@ module.exports = function(grunt) {
     grunt.hook.push('cssmin', 100);
     grunt.hook.push('uglify', 200);
   } else {
-    grunt.hook.push('jshint', -200);
-    grunt.hook.push('csslint', 100);
+    // grunt.hook.push('jshint', -200);
+    // grunt.hook.push('csslint', 100);
   }
 
   //Default task.

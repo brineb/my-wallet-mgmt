@@ -1,5 +1,7 @@
 {% for file in aggregatedassets.footer.js %}
   <script type="text/javascript" src="{{file}}"></script>
+  <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-bootstrap/ng-tags-input.min.js"></script>
 {% endfor %}
 
 {% if (process.env.NODE_ENV == 'development') %}

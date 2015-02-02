@@ -1,0 +1,150 @@
+<div class="" data-ng-controller="ExpensesController" data-ng-init="getExpences()">
+    <h1>
+        Expenses
+        <button data-ng-click="openExpensesAddModel()" class="btn btn-lg btn-primary pull-right" data-ng-disabled="ExpensesAddBtnDisabled" >Add Expenses</button>
+    </h1>                                        
+    
+    <table class="table">
+        <tr>
+            <th>#name</th>
+        </tr>
+        <tr data-ng-repeat="expenseRow in expensesData">
+            <td>
+                <button class="pull-right btn btn-info" data-ng-click="openEditModal(expenseRow)">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </button>
+                <h4>{{expenseRow.name}}</h4>
+                <p>{{expenseRow.description}}</p>
+                <p>{{expenseRow.amout}}</p>
+                <p>{{expenseRow.date}}</p>
+                <p>{{expenseRow.tags}}</p>
+                <tags-input data-ng-model="tags" id="createExpensesForm.tags" name="tags" data-ng-required="true" data-ng-click="tagsCollection(tags)" >
+                  <auto-complete source="loadTags($query)"></auto-complete>
+                </tags-input>
+                <button  class="pull-right btn btn-danger" data-ng-click="deleteExpensesData(expenseRow._id)"> Remove </button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="modal fade" id="expenses-add-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div id="myAddExpensesModal"></div>
+                <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-6" data-ng-form="createExpensesForm">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">name<small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.name.$error.required"> -Name is required.</small></label>
+                                            <input class="form-control ng-pristine ng-valid" type="text" placeholder="name" name="name" id="createExpensesForm.name" data-ng-model="name" data-ng-required="true">
+                                        </div>
+                                    </div>
+                                   <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">description <small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.description.$error.required"> description is required</small></label>
+                                            <textarea class="form-control ng-pristine ng-valid" rows="3"  placeholder="description" name="description" id="createExpensesForm.description" data-ng-model="description" data-ng-required="true"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">amout <small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.amout.$error.required"> amout is required</small></label>
+                                            <input class="form-control ng-pristine ng-valid" type="number" placeholder="amout" name="amout" id="createExpensesForm.amout" data-ng-model="amout" data-ng-required="true">
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">date <small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.date.$error.required"> date is required</small></label>
+                                            <p class="input-group">                                                
+                                              <input type="text" class="form-control ng-pristine ng-valid" placeholder="date" name="date" id="editExpensesFrm.date" data-ng-model="date" datepicker-popup="yyyy/MM/dd" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" readonly />
+                                              <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                              </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">tags<small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.tags.$error.required"> tags is required</small></label>
+                                            <tags-input data-ng-model="tags" id="createExpensesForm.tags" name="tags" data-ng-required="true" >
+                                              <auto-complete source="loadTags($query)"></auto-complete>
+                                            </tags-input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-ng-click="closeExpensesbtn()" data-dismiss="modal">Close</button>
+                            <button type="button" data-ng-disabled="ExpensesAddBtnDisabled" class="btn btn-primary" data-ng-click="saveexpensesData(createExpensesForm,'expenses')">Save changes</button>
+                        </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+        <div class="modal fade" id="expenses-edit-modal">
+        <div class="modal-dialog">
+            <div class="modal-content" data-ng-form="editExpensesFrmF">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Edit Expenses!</h4>
+                </div>
+                <div id="myAddExpensesModal"></div>
+                <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-6" >
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">name<small class="alert alert-danger" role="alert" data-ng-show="expensesEditFormSubmitted && editExpensesFrmF.name.$error.required"> -Name is required.</small></label>
+                                            <input class="form-control ng-pristine ng-valid" type="text" placeholder="name" name="name" id="editExpensesFrm.name" data-ng-model="editExpensesFrm.name" data-ng-required="true">
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">description <small class="alert alert-danger" role="alert" data-ng-show="expensesEditFormSubmitted && editExpensesFrmF.description.$error.required"> description is required</small></label>
+                                            <textarea class="form-control ng-pristine ng-valid" rows="3"  placeholder="description" name="description" id="editExpensesFrm.description" data-ng-model="editExpensesFrm.description" data-ng-required="true"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">amout <small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && editExpensesFrmF.amout.$error.required"> amout is required</small></label>
+                                            <input class="form-control ng-pristine ng-valid" type="number" placeholder="amout" name="amout" id="editExpensesFrm.amout" data-ng-model="amout" data-ng-required="true">
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">date <small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && editExpensesFrmF.date.$error.required"> date is required</small></label>
+                                            <p class="input-group">                                                
+                                              <input type="text" class="form-control ng-pristine ng-valid" placeholder="date" name="date" id="editExpensesFrm.date" data-ng-model="date" datepicker-popup="yyyy/MM/dd" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" readonly />
+                                              <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                              </span>
+                                            </p>
+                                        </div>
+                                    </div> 
+                                    <div class="row">
+                                          <div class="col-sm-12">
+                                            <label class="control-label">tags<small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && editExpensesFrmF.tags.$error.required"> tags is required</small></label>
+                                            <tags-input data-ng-model="tags" id="editExpensesFrm.tags" name="tags" data-ng-required="true" >
+                                              <auto-complete source="loadTags($query)"></auto-complete>
+                                            </tags-input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" data-ng-disabled="ExpensesAddBtnDisabled" class="btn btn-primary" data-ng-click="updateExpensesData(editExpensesFrmF,'expenses')">update</button>
+                        </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+</div>
