@@ -129,9 +129,56 @@ angular.module('mean.expenses').controller('ExpensesController', ['$scope', 'Glo
         $scope.dateOptions = {
             formatYear: 'yy',
             startingDay: 1
-        };        
-           $scope.tagsCollection = function(tags){
-            
+        };     
+
+    var getDynamicTagsByName = function(names, cb) {
+
+    if (!(names && names.length)) {
+        cb([]);
+        return;
+    };
+
+    var returns = [];
+    var loopInc = 0;
+    var loops = function() {
+
+        if (names.length <= loopInc) {
+            cb(returns);
+            return;
+        }
+
+        names[loopInc].text = names[loopInc].text.toLowerCase();
+
+        TagsModel.find({
+            name: names[loopInc].text
+        }).exec(function(err, tags) {
+
+            if (tags && tags.length) {
+                returns[returns.length] = tags[0]._id;
+                loopInc += 1;
+                loops();
+            } else {
+                var tagsFormData = new TagsModel({
+                    name: names[loopInc].text
+                });
+                tagsFormData.save(function(err, tag) {
+                    returns[returns.length] = tag._id;
+                    loopInc += 1;
+                    loops();
+                });
+            }
+        });
+    }
+        loops();
+    };
+    if (req.body.tags) {
+            getDynamicTagsByName(req.body.tags, function(tags) {
+                req.body.tags = tags;
+
+                insertP();
+            });
+        } else {
+            insertP();
         }
     }
 ]);
