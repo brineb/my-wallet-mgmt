@@ -15,3 +15,9 @@ var ExpensesSchema = new Schema({
 });
 
 mongoose.model('expenses', ExpensesSchema);
+
+var tagsSchema = new Schema({
+	name: String
+});
+
+mongoose.model('tags', tagsSchema);

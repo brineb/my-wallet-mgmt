@@ -12,14 +12,13 @@ angular.module('mean.expenses').controller('ExpensesController', ['$scope', 'Glo
                 show: true
             });
         };
+
         $scope.expensesData = [];
         $scope.getExpences = function() {
             $http.get('http://localhost:3000/expenses/fetch').success(function(data) {
                 $scope.expensesData = data;
             });
         }
-
-
 
         $scope.ExpensesAddBtnDisabled = false;
         $scope.ExpensesFormSubmitted = false;
@@ -30,7 +29,7 @@ angular.module('mean.expenses').controller('ExpensesController', ['$scope', 'Glo
             if (!$scope.createExpensesForm.$valid) {
                 $scope.ExpensesFormSubmitted = true;
                 return;
-            }
+           }
 
             expensesdata.name = $scope.name;
             expensesdata.description = $scope.description;
@@ -107,9 +106,6 @@ angular.module('mean.expenses').controller('ExpensesController', ['$scope', 'Glo
             });
         };
 
-
-
-
         $scope.clear = function() {
             $scope.editExpensesFrm.date = null;
         };
@@ -129,56 +125,6 @@ angular.module('mean.expenses').controller('ExpensesController', ['$scope', 'Glo
         $scope.dateOptions = {
             formatYear: 'yy',
             startingDay: 1
-        };     
-
-    var getDynamicTagsByName = function(names, cb) {
-
-    if (!(names && names.length)) {
-        cb([]);
-        return;
-    };
-
-    var returns = [];
-    var loopInc = 0;
-    var loops = function() {
-
-        if (names.length <= loopInc) {
-            cb(returns);
-            return;
-        }
-
-        names[loopInc].text = names[loopInc].text.toLowerCase();
-
-        TagsModel.find({
-            name: names[loopInc].text
-        }).exec(function(err, tags) {
-
-            if (tags && tags.length) {
-                returns[returns.length] = tags[0]._id;
-                loopInc += 1;
-                loops();
-            } else {
-                var tagsFormData = new TagsModel({
-                    name: names[loopInc].text
-                });
-                tagsFormData.save(function(err, tag) {
-                    returns[returns.length] = tag._id;
-                    loopInc += 1;
-                    loops();
-                });
-            }
-        });
-    }
-        loops();
-    };
-    if (req.body.tags) {
-            getDynamicTagsByName(req.body.tags, function(tags) {
-                req.body.tags = tags;
-
-                insertP();
-            });
-        } else {
-            insertP();
-        }
+        };
     }
 ]);

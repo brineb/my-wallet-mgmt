@@ -3,7 +3,55 @@
 var mongoose = require('mongoose');
 
 
+/**
+ * Get Tags Id by Name of array
+ * @param  {Array}
+ */
+var getDynamicTagsByName = function(names, cb) {
 
+    if (!(names && names.length)) {
+        cb([]);
+        return;
+    };
+
+    var TagsModel = mongoose.model('tags');
+
+    var returns = [];
+    var loopInc = 0;
+    var loops = function() {
+
+        if (names.length <= loopInc) {
+            cb(returns);
+            return;
+        }
+
+        // --
+
+        names[loopInc].text = names[loopInc].text.toLowerCase();
+
+        TagsModel.find({
+            name: names[loopInc].text
+        }).exec(function(err, tags) {
+
+            if (tags && tags.length) {
+                returns[returns.length] = tags[0]._id;
+                loopInc += 1;
+                loops();
+            } else {
+                var tagsFormData = new TagsModel({
+                    name: names[loopInc].text
+                });
+                tagsFormData.save(function(err, tag) {
+                    returns[returns.length] = tag._id;
+                    loopInc += 1;
+                    loops();
+                });
+            }
+        });
+    }
+
+    loops();
+};
 
 // The Package is past automatically as first parameter
 module.exports = function(Expenses, app, auth, database) {
@@ -29,23 +77,34 @@ module.exports = function(Expenses, app, auth, database) {
         });
     });
 
-    app.post('/expenses/save', function(req, res, next) {
+        app.post('/expenses/save', function(req, res, next) {
 
-        var expensesModel = mongoose.model('expenses');
-
-        var expensesForm = expensesModel({
-            name: req.body.name,
-            description: req.body.description,
-            amout: req.body.amout,
-            date: req.body.date,
-            tags: req.body.tags
-        });
-
-        expensesForm.save(function(err, data) {
-            res.json({
-                status: true
+        var insertP = function() {            
+            var expensesModel = mongoose.model('expenses');
+            var expensesForm = expensesModel({
+                name: req.body.name,
+                description: req.body.description,
+                amout: req.body.amout,
+                date: req.body.date,
+                tags: req.body.tags
             });
-        });
+
+            expensesForm.save(function(err, data) {
+                res.json({
+                    status: true
+                });
+            });
+        }
+
+        if (req.body.tags && req.body.tags.length) {
+            getDynamicTagsByName(req.body.tags, function(tags) {
+                req.body.tags = tags;
+                insertP();
+            });
+        } else {
+            insertP();
+        }
+
     });
 
     app.get('/expenses/fetch', function(req, res, next) {

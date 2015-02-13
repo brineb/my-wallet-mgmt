@@ -2,7 +2,7 @@
     <h1>
         Expenses
         <button data-ng-click="openExpensesAddModel()" class="btn btn-lg btn-primary pull-right" data-ng-disabled="ExpensesAddBtnDisabled" >Add Expenses</button>
-    </h1>                                        
+    </h1>
     
     <table class="table">
         <tr>
@@ -39,7 +39,7 @@
                                 <div class="col-sm-6" data-ng-form="createExpensesForm">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <label class="control-label">name<small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.name.$error.required"> -Name is required.</small></label>
+                                            <label class="control-label">name<small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.name.$error.required"> Name is required.</small></label>
                                             <input class="form-control ng-pristine ng-valid" type="text" placeholder="name" name="name" id="createExpensesForm.name" data-ng-model="name" data-ng-required="true">
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                                         <div class="col-sm-12">
                                             <label class="control-label">date <small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && createExpensesForm.date.$error.required"> date is required</small></label>
                                             <p class="input-group">                                                
-                                              <input type="text" class="form-control ng-pristine ng-valid" placeholder="date" name="date" id="editExpensesFrm.date" data-ng-model="date" datepicker-popup="yyyy/MM/dd" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" readonly />
+                                              <input type="text" class="form-control ng-pristine ng-valid" placeholder="date" name="date" id="createExpensesForm.date" data-ng-model="date" datepicker-popup="yyyy/MM/dd" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" readonly />
                                               <span class="input-group-btn">
                                                 <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                                               </span>
@@ -128,7 +128,7 @@
                                         </div>
                                     </div> 
                                     <div class="row">
-                                          <div class="col-sm-12">
+                                        <div class="col-sm-12">
                                             <label class="control-label">tags<small class="alert alert-danger" role="alert" data-ng-show="ExpensesFormSubmitted && editExpensesFrmF.tags.$error.required"> tags is required</small></label>
                                             <tags-input data-ng-model="tags" id="editExpensesFrm.tags" name="tags" data-ng-required="true" >
                                               <auto-complete source="loadTags($query)"></auto-complete>
